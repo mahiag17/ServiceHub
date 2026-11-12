@@ -1,13 +1,18 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# ========================
+# ServiceHub .gitignore
+# ========================
 
-# Node / Frontend
+# --- Secrets & Environment ---
+.env
+.env.*
+!.env.example
+*.env
+application-secrets.properties
+application-local.properties
+secrets.yml
+secrets.yaml
+
+# --- Node / Frontend ---
 node_modules/
 frontend/node_modules/
 dist/
@@ -15,25 +20,57 @@ frontend/dist/
 dist-ssr/
 frontend/dist-ssr/
 *.local
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
 
-# Maven / Java / Backend
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Maven / Java / Backend ---
 target/
 backend/target/
 *.class
 *.jar
 *.war
 *.ear
+
+# Keep the Maven wrapper JAR (needed to build without Maven installed)
 .mvn/wrapper/maven-wrapper.jar
 !backend/.mvn/wrapper/maven-wrapper.jar
 
-# Editor directories and files
+# --- IDE / Editor ---
 .vscode/*
 !.vscode/extensions.json
 .idea/
 *.iml
+*.iws
+*.ipr
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# --- OS ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V8
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# --- Build artifacts ---
+*.pyc
+__pycache__/
+*.class
+*.out
